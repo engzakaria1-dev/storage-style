@@ -1,0 +1,125 @@
+body {
+  background-image: url(./images/bg-desktop.png);
+  background-size: COVER;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+#border1 {
+  border: 1px;
+  padding: 50px;
+  margin-left: 400px;
+  background-color: rgb(30, 44, 105);
+  border-radius: 10px;
+  border-top-right-radius: 80px;
+  margin-top: 300px;
+}
+.border {
+  display: flex;
+  gap: 60px;
+}
+:root {
+  --used: 81.5%; /* Change this width when you change the used amount. */
+}
+* {
+  box-sizing: border-box;
+}
+/* The component matches the right-hand card in the reference: 540 × 154 px. */
+.storage-card {
+  position: relative;
+  margin-top: 346px;
+  width: min(540px, 100%);
+  height: 130px;
+  padding: 39px 40px 32px;
+  border-radius: 10px;
+  background: #1e2c69;
+  box-shadow: 0 16px 32px #050a1c35;
+}
+.remaining {
+  position: absolute;
+  top: -47px;
+  right: 40px;
+  height: 72px;
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #0c122c;
+  background: #fff;
+  border-radius: 10px;
+}
+.remaining::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -21px;
+  width: 0;
+  height: 0;
+  border-top: 24px solid #fff;
+  border-left: 24px solid transparent;
+}
+.remaining strong {
+  font-size: 38px;
+  line-height: 1;
+}
+.remaining span {
+  color: #85889b;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.summary {
+  margin: 0 0 15px;
+  color: #c8d0f2;
+  font-size: 14px;
+}
+.summary strong {
+  color: #fff;
+}
+.meter {
+  height: 20px;
+  padding: 3px;
+  border-radius: 999px;
+  background: #101a4d;
+}
+.meter-fill {
+  position: relative;
+  width: var(--used);
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ffa399, #ff4d97);
+}
+.meter-fill::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  transform: translateY(-50%);
+}
+.scale {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 9px;
+  color: #c8d0f2;
+  font-size: 12px;
+  font-weight: 700;
+}
+@media (max-width: 480px) {
+  .storage-card {
+    height: 160px;
+    padding: 38px 24px 30px;
+  }
+  .remaining {
+    top: auto;
+    right: 50%;
+    bottom: -36px;
+    transform: translateX(50%);
+  }
+  .remaining::after {
+    display: none;
+  }
+}
